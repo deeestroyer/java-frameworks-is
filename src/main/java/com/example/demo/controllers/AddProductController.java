@@ -1,4 +1,5 @@
 package com.example.demo.controllers;
+import javax.swing.JOptionPane;
 
 import com.example.demo.domain.Part;
 import com.example.demo.domain.Product;
@@ -13,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.swing.*;
 import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
@@ -125,7 +127,7 @@ public class AddProductController {
     public AddProductController(PartService partService) {
         this.partService = partService;
     }
-// make the add and remove buttons work
+   // make the add and remove buttons work
 
     @GetMapping("/associatepart")
     public String associatePart(@Valid @RequestParam("partID") int theID, Model theModel){
