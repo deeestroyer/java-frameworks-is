@@ -23,11 +23,23 @@ public class MinMaxValidator implements ConstraintValidator<ValidMinMax, Part> {
         PartService repo = context.getBean(PartServiceImpl.class);
 
         if (part.getMax() < part.getMin()) {
+            addErrorMessage(constraintValidatorContext, "Maximum inventory must be greater than or equal to min inventory");
             return false;
-        } else if(part.getInv() < part.getMin() || part.getInv() > part.getMax()) {
+        } else if(part.getInv() < part.getMin()) {
+            addErrorMessage(constraintValidatorContext, "Low inventory alert! Inventory must be at or above the minimum");
             return false;
-        } else {
+        } else if(part.getInv() > part.getMax()) {
+            addErrorMessage(constraintValidatorContext, "Inventory at capacity! Inventory must be at or below the maximum");
+            return false;
+        }else {
             return true;
         }
     }
+
+    private void addErrorMessage(ConstraintValidatorContext context, String message) {
+        context.disableDefaultConstraintViolation();
+        context.buildConstraintViolationWithTemplate(message).addConstraintViolation();
+    }
 }
+
+
