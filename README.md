@@ -44,3 +44,4 @@ Each note should include the prompt, file name, line number, and change.
 38. EnufPartsValidator.java ; line 36 ; modify low inventory logic for products to trigger below min
 39. ValidEnufParts.java ; line 20 ; modified what message said
 40. PartTest.java ; lines 160 - 194; setup and tested 2 unit tests for max and min
+41. NO unused validators. uncommented BootStrapData for submission.

@@ -39,7 +39,7 @@ public class BootStrapData implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        /*
+        /* */
         OutsourcedPart p100= new OutsourcedPart();
         p100.setCompanyName("EVGA");
         p100.setName("EVGA RTX 3070Ti");
@@ -93,7 +93,7 @@ public class BootStrapData implements CommandLineRunner {
         p104.setPrice(89.99);
         p104.setId(104);
         outsourcedPartRepository.save(p104);
-        */
+        /**/
 
         /*
         OutsourcedPart thePart = null;
@@ -111,7 +111,7 @@ public class BootStrapData implements CommandLineRunner {
         }
 
 
-        /*
+
         Product t1g = new Product("Tier 1 Gaming PC",1500.0,10);
         Product t2g = new Product("Tier 2 Gaming PC",2000.0,10);
         Product t3g = new Product("Tier 3 Gaming PC",2500.0,10);
@@ -122,7 +122,7 @@ public class BootStrapData implements CommandLineRunner {
         productRepository.save(t3g);
         productRepository.save(t1d);
         productRepository.save(t3w);
-        */
+
         System.out.println("Started in Bootstrap");
         System.out.println("Number of Products"+productRepository.count());
         System.out.println(productRepository.findAll());
