@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
+import com.example.demo.validators.ValidMinMax;
 
 /**
  *
@@ -25,6 +26,7 @@ import javax.validation.Valid;
  *
  *
  */
+@ValidMinMax
 @Controller
 public class AddOutsourcedPartController {
     @Autowired
@@ -50,7 +52,4 @@ public class AddOutsourcedPartController {
             repo.save(part);
         return "confirmationaddpart";}
     }
-
-
-
 }

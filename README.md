@@ -15,3 +15,29 @@ Each note should include the prompt, file name, line number, and change.
                                    successful and returns success page, when inventory is zero, notifies customer.
 8. purchaseconfirmation.html ; lines 1-13 ; Created html page that gets shown when purchase is successful.
 9. outofstock.html; lines 1-13; Created html page that gets shown when product is out of stock.
+10. Part.java ; line 32-35; added min max variables;
+11. Part.java ; line 45 & 53; added min max variables to constructor argument list;
+12. Part.java ; line 49,50 & 58,59; added min max variables to constructor and set their values; 
+13. Part.java ; line 94- 109; added min max setters and getters;
+14. InhousePartForm.html ; lines 23-27 ; added html input fields for min max for in house parts.Also added error catching 
+15. OutsourcedPartForm.html ; lines 24-28 ; added html input fields for min max for outsourced parts.Also added error catching
+16. BootStrapData.java ; lines 43-95; Added and modified sample parts
+17. BootStrapData.java ; lines 115-124; Added sample products
+18. InhousePartForm.html ; lines 31-35 ; added Validator error display div
+19. OutsourcedPartForm.html ; lines 32-36 ; added Validator error display div
+20. Part.java ; line 4 & 18; imported and added @ValidMinMax validator
+21. AddInhousePartController.java ; lines 20 & 29 ; imported and added @ValidMinMax validator
+22. AddOutsourcedPartController.java ; lines 21 & 29 ; imported and added @ValidMinMax validator
+23. AddPartController.java ; lines 17 & 26 ; imported and added @ValidMinMax validator
+24. productForm.html ; lines 38,39,62,63 ; added minimum and maximum inventory titles for available and associated parts for products
+25. productForm.html ; lines 48,49,72,73 ; added minimum and maximum inventory values for available and associated parts for products
+26. mainscreen.html ; lines 39,40 ; added minimum and maximum inventory columns for parts on main screen
+27. mainscreen.html ; lines 49,50 ; added minimum and maximum inventory values for parts on main screen
+28. ValidMinMax.java ; lines 1-8 ; created a java annotation class file, imported necessary connections;
+29. ValidMinMax.java ; line 10; added a constraint and specified which class to use for validation logic
+30. ValidMinMax.java ; line 11;  set it to annotate only class declarations
+31. ValidMinMax.java ; line 12; set retention policy as RUNTIME
+32. ValidMinMax.java ; lines 13-17;  Setup the error message that gets displayed when validation fails.
+33. MinMaxValidator.lava ; lines 1-8 ; created a java annotation class file, imported necessary connections;
+34. MinMaxValidator.lava ; lines 11-18 ; created MinMaxValidator class and initialized constraint validator class
+35. MinMaxValidator.lava ; lines 20-32 ; created the validation logic that checks if min, max, inventory fall within guidelines.

@@ -1,7 +1,7 @@
 package com.example.demo.domain;
 
 import com.example.demo.validators.ValidDeletePart;
-
+import com.example.demo.validators.ValidMinMax;
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import java.io.Serializable;
@@ -15,6 +15,7 @@ import java.util.Set;
  *
  */
 @Entity
+@ValidMinMax
 @ValidDeletePart
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="part_type",discriminatorType = DiscriminatorType.INTEGER)
@@ -28,6 +29,10 @@ public abstract class Part implements Serializable {
     double price;
     @Min(value = 0, message = "Inventory value must be positive")
     int inv;
+    @Min(value = 0, message = "Minimum Inventory value must value must be positive")
+    int min;
+    @Min(value = 0, message = "Maximum Inventory value must be at or above Minimum")
+    int max;
 
     @ManyToMany
     @JoinTable(name="product_part", joinColumns = @JoinColumn(name="part_id"),
@@ -37,17 +42,21 @@ public abstract class Part implements Serializable {
     public Part() {
     }
 
-    public Part(String name, double price, int inv) {
+    public Part(String name, double price, int inv, int min, int max) {
         this.name = name;
         this.price = price;
         this.inv = inv;
+        this.min = min;
+        this.max = max;
     }
 
-    public Part(long id, String name, double price, int inv) {
+    public Part(long id, String name, double price, int inv, int min, int max) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.inv = inv;
+        this.min = min;
+        this.max = max;
     }
 
     public long getId() {
@@ -80,6 +89,22 @@ public abstract class Part implements Serializable {
 
     public void setInv(int inv) {
         this.inv = inv;
+    }
+
+    public int getMin() {
+        return min;
+    }
+
+    public void setMin(int min) {
+        this.min = min;
+    }
+
+    public int getMax() {
+        return max;
+    }
+
+    public void setMax(int max) {
+        this.max = max;
     }
 
     public Set<Product> getProducts() {

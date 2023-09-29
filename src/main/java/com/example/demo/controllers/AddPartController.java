@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import com.example.demo.validators.ValidMinMax;
+
 
 /**
  *
@@ -21,6 +23,7 @@ import java.util.List;
  *
  *
  */
+@ValidMinMax
 @Controller
 public class AddPartController {
     @Autowired
