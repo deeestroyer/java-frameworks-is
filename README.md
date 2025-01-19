@@ -1,14 +1,8 @@
-D287 – JAVA FRAMEWORKS
+#JAVA FRAMEWORKS
 Welcome to Java Frameworks! This is an opportunity for students to implement user interfaces and learn to leverage existing frameworks, assets, and content for object-oriented programming. (Maven, JAVA)
 
 
-
-
-# WESTERN GOVERNOR UNIVERSITY 
-## D287 – JAVA FRAMEWORKS
-
-Each note should include the prompt, file name, line number, and change.
-
+Following changes were made:
 1. C. mainscreen.html ; line 14 ;  Changed shop title;
 2. C. mainscreen.html ; line 19 ;  hanged h1 to reflect shop name;
 3. D. mainscreen.html ; line 20 ;  Added a button that takes user to about us page
